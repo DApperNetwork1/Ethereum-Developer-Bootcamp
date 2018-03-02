@@ -1,1 +1,1 @@
-# Bootcamp
+DApperNetwork Ethereum Developer Bootcamp

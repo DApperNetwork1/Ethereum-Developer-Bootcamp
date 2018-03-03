@@ -6,14 +6,14 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/
 import "https://github.com/OpenZeppelin/zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /** Create contract that extends the standard ERC20 token contract with minting capabilities.
- *  The initial conditions are written out for you to ease you into writing the contracts.
- *  Don't worry, we won't be giving you as many hints in the next contracts and you'll have to figure them out yourself.
+ *  We've provided you with the pseudocode and some hints to guide you in the right direction.
+ *  Some of the initial conditions are written out for you to ease you into writing the contracts.
  *  Make sure to implement the best practices you learned during the Solidity Walkthrough segment.
  *  Check for errors by compiling often. Ask your classmates for help - we highly encourage student collaboration.
  */
 
 // Set up your contract so that it inherits functionality from OpenZeppelin's StandardToken and Ownable.
-contract MintableToken is StandardToken, Ownable {
+contract {
     // Create event that logs the receiver address and the amount of the token being minted.
     event Mint(address indexed to, uint256 amount);
     // Create event that logs the completion of token minting.
@@ -25,7 +25,7 @@ contract MintableToken is StandardToken, Ownable {
     // Create modifier that enforces the condition for minting to be available only if minting is not finished.
     modifier canMint() {
         // Require statements are used to check for conditions and throw an exception if the condition isn't met.
-        require(!mintingFinished);
+        ;
         // _; is used to return the flow of execution to the original function.
         _;
     }
@@ -51,7 +51,7 @@ contract MintableToken is StandardToken, Ownable {
     // Write the function so taht it returns a boolean that indicates if the operation was successful.
     function finishMinting() {
         // Update initial state to reflect that minting is finished.
-        mintingFinished = true;
+        mintingFinished;
         // Emit event that logs the completion of token minting.
         ;
         // Indicate that the operation was successful.

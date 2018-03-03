@@ -2,15 +2,15 @@ pragma solidity ^0.4.18;
 
 // Import OpenZeppelin's SafeMath contract to prevent overflow/underflow security issues
 import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol";
-// Import the token contract you just wrote.
+// Import the custom token contract you just wrote.
 ;
 
-/** This is an assignment to create a basic smart contract that allows you to run your own token crowdsale.
+/** This is an assignment to create a smart contract that allows you to run your own token crowdsale.
+ *  Your contract will mint your custom token every time a purchase is made by your or your classmates.
  *  We've provided you with the pseudocode and some hints to guide you in the right direction.
  *  Make sure to implement the best practices you learned during the Solidity Walkthrough segment.
  *  Check for errors by compiling often. Ask your classmates for help - we highly encourage student collaboration.
- *  You should be able to deploy your crowdsale contract onto the public testnet and buy/sell your classmates' tokens.
- *  If you found the basic contract easy, feel free to move on to extending the functionality of your basic crowdsale contract.
+ *  You should be able to deploy your crowdsale contract onto the Kovan testnet and buy/sell your classmates' tokens.
  */
  
  // Set up your contract.
@@ -18,9 +18,9 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/
     // Attach SafeMath library functions to the uint256 type.
     using SafeMath for uint256;
       
-    // Define 4 publicly accessible state variables (first one is done for you). 
-    // Token being sold.
-    ERC20 public token;
+    // Define 4 publicly accessible state variables. 
+    // Your custom token being sold.
+    ;
     // Wallet address where funds are collected.
     ;  
     // Rate of how many token units a buyer gets per wei. Note that wei*10^-18 converts to ether.
@@ -39,7 +39,7 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/
     /** Create publicly accessible constructor function with 3 parameters:
     * 1) Rate of how many token units a buyer gets per wei
     * 2) Wallet address where funds are collected
-    * 3) Address of token being sold
+    * 3) Address of your custom token being sold
     * Function modifiers are incredibly useful and effective. Make sure to use the right ones for each Solidity function you write.
     */
     function ( , , ) {
@@ -103,26 +103,16 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/
         ;
         ;
     }
-    
-    // Create function that validates an executed purchase with two parameters: beneficiary's address and value of wei.
-    function _postValidatePurchase( , ) {
-    // Optional extension
-    }
-    
+
     // Create function that delivers the purchased tokens with two parameters: beneficiary's address and number of tokens.
     function _deliverTokens( , ) {
-        // Use transfer method inherited from imported ERC20 contract.
-        token.transfer( , );
+        // Set condition that requires contract to mint your custom token with the mint method inherited from your MintableToken contract.
+        .mint( , );
     }
     
     // Create function that executes the deliver function when a purchase has been processed with two parameters: beneficiary's address and number of tokens.
     function _processPurchase( , ) {
         ;
-    }
-    
-    // Create function that updates internal purchasing state with two parameters: beneficiary's address and value of wei.
-    function _updatePurchasingState( , ) {
-    // Optional extension
     }
 
     // Create function to convert purchase value in wei into tokens with one parameter: value in wei.

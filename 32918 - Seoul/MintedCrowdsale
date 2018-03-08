@@ -61,9 +61,9 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/
     // Create the fallback function that is called whenever anyone sends funds to this contract.
     // Fallback functions are functions without a name that serve as a default function.
     // Functions dealing with funds have a special modifier.
-    function () {
+    function () external payable {
         // Call buyTokens function with the address defaulting to the address the message originates from.
-        ;
+        buyTokens();
     }
     
     // Create the function used for token purchase with one parameter for the address performing the token purchase.
@@ -84,14 +84,10 @@ import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/
         ;
         // Raise the event associated with a token purchase.
         ;
-        
-        // Call function that updates internal purchasing state.
-        ;
-        
+                
         // Call function that stores ETH from purchases into a wallet address.
         ;
-        // Call function that validates an executed purchase.
-        ;
+      
     }
         
     // THIS PORTION IS FOR THE CONTRACT'S INTERNAL INTERFACE.

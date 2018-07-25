@@ -40,8 +40,8 @@ contract {
         balances[_to] = ;
         // Emit the Mint event with appropriate input parameters.
         ;
-        // Execute the Transfer function inherited from the StandardToken contract to deliver the minted tokens to the receiver.
-        // Transfer function requires 3 parameters: address tokens are coming from, address tokens are going to, amount of tokens.
+        // Emit the Transfer event inherited from the StandardToken contract to signal the minted tokens transferred to the recipient.
+        // Transfer event requires 3 parameters: address tokens are coming from, address tokens are going to, amount of tokens.
         Transfer( , , );
         // Indicate that the operation was successful. 
         ;
